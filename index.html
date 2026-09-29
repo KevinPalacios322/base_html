@@ -6,7 +6,7 @@
 
     <body>
 
-        <head>
+        <header>
             <nav>
                 <ul>
                     <li> <a href=""  >Home</a> </li>
@@ -14,14 +14,101 @@
                     <li> <a href="">Contact</a> </li>
                 </ul>
             </nav>
-        </head>
-        <body>
-            <H1>Bienvenido a mi pagina </H1>
+        </header>
+        <main>
+            <form action="submit_form.php" method="post">
+                <h1>Formulario de registro</h1>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="Nombre" required><br><br>  
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" required ><br><br>
 
-        </body>
-        <footer>
-            <h1>Pagína creada por Kevin Palacios</h1>
-        </footer>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="Password" required><br><br>
+
+                <select name="gender" id="gender"><br><br>
+                    <option value="male">Masculino</option>
+                    <option value="female">Femenino</option>
+                </select>
+
+                <label for="checkbox">Checkbox</label>
+                <input type="checkbox" name="checkbox" id="checkbox"><br><br>
+
+                <optgroup  label="Pais">
+
+                    <option value="colombia">Colombia</option>
+                    <option value="peru">Peru</option>
+                    <option value="chile">Chile</option>
+                </optgroup>
+                <label for="radio1">Opcion 1</label>
+                <input type="radio" name="radio" id="radio1" value="opcion1"><br>
+                <label for="radio2">Opcion 2</label>
+                <input type="radio" name="radio" id="radio2" value="opcion2"><br>
+                
+                <label for="message">Mensaje</label><br>
+                <textarea name="message" id="message" cols="100" rows="10"></textarea><br>
+
+                <input type="number" name="number" id="number" min="1" max="10">
+                <input type="date" name="date" id="date"><br><br>
+                
+                <input type="file" name="file" id="file"><br><br>
+                <input type="color" name="color" id="color"><br><br>
+                <input type="range" name="range" id="range" min="0" max="100" orient="vertical"><br><br>    
+                <input type="url" name="url" id="url"><br><br>
+                <input type="tel" name="tel" id="tel"><br><br>   
+                <input type="search" name="search" id="search"><br><br>
+                <input type="time" name="time" id="time"><br><br>   
+                <input type="week" name="week" id="week"><br><br>
+                <input type="month" name="month" id="month"><br><br>
+                <input type="datetime-local" name="datetime-local" id="datetime-local"><br><br>
+                <input type="hidden" name="hidden" id="hidden" value="hidden_value"><br><br>        
+
+                <input type="submit" value="Enviar">
+
+            </form>
+
+            <label for="username">DATO DE SALIDA</label><br>
+
+            <table>
+                <input type="search" id="search-input" placeholder="Buscar...">
+
+                <thead>
+                    <tr>
+                        <th>Columna 1</th>
+                        <th>Columna 2</th>
+                        <th>Columna 3</th>
+                        <th>Columna 4</th>
+                        <th>Columna 5</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="table-body">
+                    <tr>
+                        <td>Fila 1
+
+                    </tr>
+
+                    <tr>
+                        <td>Fila 2
+                    </tr>
+
+                    <tr>
+                        <td>Fila 3
+                    </tr>
+
+                    <tr>
+                        <td>Fila 4      
+                </tr>
+
+                <tr>
+                    <td>Fila 5
+                </tr>   
+                </tbody>
+
+        </main>
+        
+
 
     </body>
 
