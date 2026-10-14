@@ -1,1 +1,13 @@
-<p>calculadora works!</p>
+<main class="pagina-calculadora">
+  <section class="calculadora" aria-label="Calculadora básica">
+    <h1>Calculadora</h1>
+    <output class="pantalla" aria-live="polite">{{ pantalla }}</output>
+    <div class="teclas">
+      <button class="accion" (click)="limpiar()">C</button><button class="accion" (click)="borrar()" aria-label="Borrar último dígito">⌫</button><button class="operador" (click)="elegirOperacion('÷')">÷</button><button class="operador" (click)="elegirOperacion('×')">×</button>
+      <button (click)="escribirNumero('7')">7</button><button (click)="escribirNumero('8')">8</button><button (click)="escribirNumero('9')">9</button><button class="operador" (click)="elegirOperacion('−')">−</button>
+      <button (click)="escribirNumero('4')">4</button><button (click)="escribirNumero('5')">5</button><button (click)="escribirNumero('6')">6</button><button class="operador" (click)="elegirOperacion('+')">+</button>
+      <button (click)="escribirNumero('1')">1</button><button (click)="escribirNumero('2')">2</button><button (click)="escribirNumero('3')">3</button><button class="igual" (click)="calcular()">=</button>
+      <button class="cero" (click)="escribirNumero('0')">0</button><button (click)="agregarDecimal()">.</button>
+    </div>
+  </section>
+</main>
