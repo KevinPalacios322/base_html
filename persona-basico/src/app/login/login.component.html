@@ -1,6 +1,5 @@
 <main>
  <h1>Iniciar sesión</h1>
- @if (!sesionIniciada) {
  <form (ngSubmit)="iniciarSesion()">
  <label for="usuario">Usuario</label>
  <input id="usuario" name="usuario"
@@ -10,10 +9,4 @@
  [(ngModel)]="clave" required>
  <button type="submit">Ingresar</button>
  </form>
- } @else {
- <p>Sesión iniciada correctamente</p>
- <button type="button" (click)="cerrarSesion()">
- Cerrar sesión
- </button>
- }
 </main>
