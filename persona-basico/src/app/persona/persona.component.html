@@ -1,28 +1,44 @@
 <main>
- <h1>Registro de personas</h1>
- <button type="button" (click)="cerrarSesion()">
- Cerrar sesión
- </button>
- <h2>Personas registradas</h2>
- <p>Total: {{ personas.length }}</p>
- <div class="tabla">
- <table>
- <thead>
- <tr>
- <th>ID</th><th>DNI</th><th>Nombre</th>
- <th>Fecha de nacimiento</th>
- </tr>
- </thead>
- <tbody>
- @for (persona of personas; track persona.id) {
- <tr>
- <td>{{ persona.id }}</td>
- <td>{{ persona.dni }}</td>
- <td>{{ persona.nombre }}</td>
- <td>{{ persona.fechaNacimiento }}</td>
- </tr>
- }
- </tbody>
- </table>
- </div>
+  <h1>Registro de personas</h1>
+  <button type="button" (click)="cerrarSesion()">Cerrar sesión</button>
+
+  <h2>Registrar persona</h2>
+  <form (ngSubmit)="guardar()">
+    <label for="dni">DNI</label>
+    <input id="dni" name="dni" type="text" [(ngModel)]="dni" required />
+
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" [(ngModel)]="nombre" required />
+
+    <label for="fecha">Fecha de nacimiento</label>
+    <input id="fecha" name="fecha" type="date" [(ngModel)]="fechaNacimiento" required />
+
+    <button type="submit">Guardar</button>
+    <button type="button" (click)="limpiar()">Limpiar</button>
+  </form>
+
+  <h2>Personas registradas</h2>
+  <p>Total: {{ personas.length }}</p>
+  <div class="tabla">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>DNI</th>
+          <th>Nombre</th>
+          <th>Fecha de nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (persona of personas; track persona.id) {
+          <tr>
+            <td>{{ persona.id }}</td>
+            <td>{{ persona.dni }}</td>
+            <td>{{ persona.nombre }}</td>
+            <td>{{ persona.fechaNacimiento }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </main>
