@@ -89,4 +89,12 @@ export class PersonaComponent {
     this.guardarEnLocalStorage();
     this.limpiar();
   }
+
+  eliminar(indice: number) {
+    if (confirm('¿Eliminar esta persona?')) {
+      this.personas.splice(indice, 1);
+      this.guardarEnLocalStorage();
+      this.limpiar();
+    }
+  }
 }
