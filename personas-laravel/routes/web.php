@@ -16,7 +16,9 @@ Route::post('/login', [LoginController::class, 'store'])
     ->name('login.store');
 
 Route::middleware('auth')->group(function () {
-    Route::view('/inicio', 'inicio')->name('inicio');
+    Route::get('/inicio', function () {
+        return redirect()->route('personas.index');
+    })->name('inicio');
 
     Route::get('/personas', [PersonaController::class, 'index'])
         ->name('personas.index');
