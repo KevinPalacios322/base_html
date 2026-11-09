@@ -1,21 +1,31 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('contenido')
     <h1>Iniciar sesión</h1>
 
-    <form>
-        <label>Correo electrónico:</label>
-        <input type="email" name="email">
+    <form method="POST" action="{{ route('login.store') }}">
+        @csrf
 
-        <label>Contraseña:</label>
-        <input type="password" name="password">
+        <label for="email">Correo electrónico:</label>
+        <input
+            id="email"
+            type="email"
+            name="email"
+            value="{{ old('email') }}"
+            required
+            autocomplete="username"
+        >
+
+        <label for="password">Contraseña:</label>
+        <input
+            id="password"
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+        >
 
         <button type="submit">Ingresar</button>
     </form>
-</body>
-</html>
+@endsection
