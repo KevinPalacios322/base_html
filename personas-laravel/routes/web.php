@@ -21,6 +21,10 @@ Route::middleware('auth')->group(function () {
         ->name('personas.create');
     Route::post('/personas', [PersonaController::class, 'store'])
         ->name('personas.store');
+    Route::get('/personas/{id}/editar', [PersonaController::class, 'edit'])
+        ->whereNumber('id')->name('personas.edit');
+    Route::put('/personas/{id}', [PersonaController::class, 'update'])
+        ->whereNumber('id')->name('personas.update');
     Route::post('/logout', [LoginController::class, 'destroy'])
         ->name('logout');
 });

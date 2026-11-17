@@ -3,6 +3,8 @@
 @section('contenido')
     <h1>Personas registradas</h1>
 
+    <a href="{{ route('personas.create') }}">Registrar nueva persona</a>
+
     <table>
         <thead>
             <tr>
@@ -10,6 +12,7 @@
                 <th scope="col">DNI</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Nacimiento</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +22,9 @@
                     <td>{{ $persona->dni }}</td>
                     <td>{{ $persona->nombre }}</td>
                     <td>{{ $persona->fecha_nacimiento->format('d/m/Y') }}</td>
+                    <td>
+                        <a href="{{ route('personas.edit', $persona->id) }}">Editar</a>
+                      
                 </tr>
             @empty
                 <tr>
